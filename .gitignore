@@ -1,0 +1,18 @@
+# DuckDB database and dump artifacts
+hw1/lahman-cmudb2025.db
+hw1/lahman-cmudb2025.db.gz
+hw1/lahman.tar
+hw1/._lahman-cmudb2025.db
+hw1/*.bak
+hw1/q6_test.db
+
+# Build artifacts (for bustub later)
+build/
+*.o
+*.so
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+bustub/
