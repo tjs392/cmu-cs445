@@ -53,11 +53,29 @@ Skip lists: Delete
 - First logically remove a key from the index by setting a flag 
 - Then physically remove the key once we know that no other thread is holding the reference.
 
+Skip Lists
+- Advantages
+    - May use less memory than a B+Tree, if you do not include reverse pointers
+    - Insertions and deletions do not require rebalancing
+- Disadvtanges
+    - Not disk/cache friendly because they do not optimize locality of references
+    - Reverse serach in non-trivial
 
+Observation
+- The inner node keys in a B+Tree cannot tell you whether a key exists in the index
+- This mean you could have one buffer pool page miss per level in the tree just to find out a key does not exist
 
+Trie Index
+- Instead of storing an entire key at every level, store a portion or a digit of the key
+- As you traverse the tree, the path can be used to reconstruct the key you're looking for
+- All operations have O(k) complexity where k is the length of the key
 
+Tri Key Span
+- Span of a trie level is the number of bits that each partial key/digit represents
+- Determines fanout
 
-
-
+Radix Tree
+- Vertically compressed trie that compacts nodes with a single trie
+- Can produce false positives
 
 
